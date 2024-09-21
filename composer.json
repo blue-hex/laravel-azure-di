@@ -25,5 +25,8 @@
                 "AzureDI": "BlueHex\\LaravelAzureDI\\Facades\\AzureDI"
             }
         }
-    }
+    },
+    "license": [
+        "MIT"
+    ]
 }
