@@ -22,9 +22,9 @@ use BlueHex\AzureDI\AzureDI;
 
 class DocumentController extends Controller
 {
-protected $azureDI;
+    //protected $azureDI;
 
-    public function __construct(AzureDI $azureDI)
+    public function __construct()
     {
         $this->azureDI = $azureDI;
     }
@@ -34,7 +34,7 @@ protected $azureDI;
         $file = $request->file('document');
 
         // Assuming the package has a method to analyze documents
-        $result = $this->azureDI->analyze($file->getPathname());
+        $result = AzureDI::make()->analyzeDocument($file->getPathname());
 
         return response()->json($result);
     }
