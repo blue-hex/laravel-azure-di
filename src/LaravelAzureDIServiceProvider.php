@@ -21,7 +21,7 @@ class LaravelAzureDIServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config/azure-di.php' => config_path('azure-di.php'),
-        ], 'config');
+        ]);
 
     }
 }
