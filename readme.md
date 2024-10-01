@@ -22,13 +22,6 @@ use BlueHex\LaravelAzureDI\Facades\AzureDI;
 
 class DocumentController extends Controller
 {
-    //protected $azureDI;
-
-    public function __construct()
-    {
-        $this->azureDI = $azureDI;
-    }
-
     public function analyzeDocument(Request $request)
     {
         $file = $request->file('document');
