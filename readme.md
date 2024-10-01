@@ -6,7 +6,7 @@ First, you need to install the package via Composer. Run the following command i
 ## Configuration
 After installing the package, you may need to publish the configuration file. This can typically be done using the following Artisan command:
 
-`php artisan vendor:publish --provider="BlueHex\AzureDI\AzureDIServiceProvider"`
+`php artisan vendor:publish --provider="BlueHex\LaravelAzureDI\LaravelAzureDIServiceProvider"`
 
 This command will publish a configuration file named `azure-di.php` to your config directory. You should then add your Azure Document Intelligence credentials to this configuration file.
 
@@ -18,7 +18,7 @@ Here’s a basic example of how you might use the package in a Laravel controlle
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use BlueHex\AzureDI\AzureDI;
+use BlueHex\LaravelAzureDI\Facades\AzureDI;
 
 class DocumentController extends Controller
 {
@@ -60,3 +60,9 @@ Here’s a simple HTML form to upload a document:
     <button type="submit">Analyze Document</button>
 </form>
 ```
+### Important Notes
+- Polling
+  - The Azure Document Intelligence API is asynchronous and our package will poll the API until the analysis is complete.
+  - You may need to increase `max_execution_time` in your `php.ini` file to allow the package to poll the API for longer periods of time.
+  - Recommended value: `max_execution_time = 300`
+  - You can also use laravel's queue system to handle the polling in the background. ( need help in coming up with an instruction on thi. )

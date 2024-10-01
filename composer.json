@@ -2,6 +2,7 @@
     "name": "blue-hex/laravel-azure-di",
     "description": "Laravel SDK for Azure Document Intelligence.",
     "type": "library",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Rohan Krishna",
